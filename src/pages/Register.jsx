@@ -1,4 +1,3 @@
-// === FRONTEND: src/Register.jsx ===
 import React, { useState } from 'react';
 
 const Register = () => {
@@ -14,7 +13,7 @@ const Register = () => {
     setErrors({});
   };
 
-  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const validate = () => {
     const temp = {};
@@ -33,35 +32,40 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      const payload = {
-        name: form.name,
-        email: form.email,
-        password: form.password,
-      };
+    if (!validate()) return;
 
-      const url = isLogin
-        ? 'http://localhost:5000/api/auth/login'
-        : 'http://localhost:5000/api/auth/register';
+    const payload = {
+      name: form.name,
+      email: form.email,
+      password: form.password,
+    };
 
-      try {
-        const res = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
+    const url = isLogin
+      ? 'http://localhost:5000/api/auth/login'
+      : 'http://localhost:5000/api/auth/register';
 
-        const data = await res.json();
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
 
-        if (!res.ok) {
-          throw new Error(data.message || 'Something went wrong');
-        }
-
-        alert(data.message);
-      } catch (err) {
-        alert(err.message);
-        console.error(err);
+      const contentType = res.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error('Server returned a non-JSON response');
       }
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || 'Something went wrong');
+      }
+
+      alert(data.message);
+    } catch (err) {
+      alert(err.message);
+      console.error(err);
     }
   };
 
