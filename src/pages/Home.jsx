@@ -1,43 +1,43 @@
 import React from 'react';
-import video1 from '../assets/original.mp4';
-import video2 from '../assets/original (1).mp4';
+import video1 from '/assets/original.mp4';
+import video2 from '/assets/original (1).mp4';
 import Footer from '../Components/Footer';
 
 const carData = [
   {
-    src: 'src/assets/photo-1546518071-fddcdda7580a.avif',
+    src: '/assets/photo-1546518071-fddcdda7580a.avif',
     quote: 'Luxury redefined, silence louder than engine noise.',
   },
   {
-    src: 'src/assets/photo-1546933751-22670568bacf.avif',
+    src: '/assets/photo-1546933751-22670568bacf.avif',
     quote: 'Command every road; power, prestige, and presence.',
   },
   {
-    src: 'src/assets/photo-1583870996781-5b88f8a62aad.avif',
+    src: '/assets/photo-1583870996781-5b88f8a62aad.avif',
     quote: 'Elegance in motion, crafted for quiet confidence.',
   },
   {
-    src: 'src/assets/istockphoto-1422277261-612x612.webp',
+    src: '/assets/istockphoto-1422277261-612x612.webp',
     quote: 'Timeless design meets everyday driving excellence.',
   },
   {
-    src: 'src/assets/istockphoto-130407085-612x612.webp',
+    src: '/assets/istockphoto-130407085-612x612.webp',
     quote: 'Born for speed, sculpted like a bullet.',
   },
   {
-    src: 'src/assets/photo-1646194314870-6e25f74e6e60.avif',
+    src: '/assets/photo-1646194314870-6e25f74e6e60.avif',
     quote: 'Curves, control, and cutting-edge charisma.',
   },
   {
-    src: 'src/assets/photo-1650585355076-301fae2f0316.avif',
+    src: '/assets/photo-1650585355076-301fae2f0316.avif',
     quote: 'Beyond luxury, Maybach moves in absolute grace.',
   },
   {
-    src: 'src/assets/photo-1667070884879-4b7f73cc146c.avif',
+    src: '/assets/photo-1667070884879-4b7f73cc146c.avif',
     quote: 'Smart, sleek, electric: silently stunning Mercedes drive.',
   },
   {
-    src: 'src/assets/photo-1722816385770-8640d490117b.avif',
+    src: '/assets/photo-1722816385770-8640d490117b.avif',
     quote: 'The future hums quietly in electric sophistication.',
   },
 ];
@@ -132,7 +132,7 @@ const Home = () => {
 
       {/* Footer Image */}
       <div>
-        <img src="src/assets/Screenshot 2025-05-20 162834.png" alt="" />
+        <img src="/assets/Screenshot 2025-05-20 162834.png" alt="" />
       </div>
 
       <Footer />
